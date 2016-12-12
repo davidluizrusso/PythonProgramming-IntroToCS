@@ -94,7 +94,89 @@ def main():
     
 main()
 
-#7. Modify the futval.py program to use compounding periods. 
+#7. Modify the futval.py program to use compounding periods. The program will
+#   prompt the user for:
+#   i. The length of the investment
+#   ii. The principal investment amount
+#   iii. The interest rate 
+#   iv. The yearly contributions
+#   v. The number of periods per year
+
+def main():
+    print("This program calculates the value of an investment compounded for ")
+    print("a given number of years, with a given principal, a given interest ")
+    print("rate, a given annual contribution, and a given number of periods.")
+
+    years = eval(input("Enter the number of years for the investment: "))
+    investment_amt = eval(input("Enter the principal balance: "))    
+    apr = eval(input("Enter the interest rate: "))
+    yearly_amt = eval(input("Enter the yearly contributions: "))
+    periods = eval(input("Enter the number of periods per year: "))
+
+
+    
+    for i in range(periods*years):
+        if (i%4 == 0 and i > 0):
+            investment_amt = (investment_amt+yearly_amt) * (1+(apr/periods))
+        else:
+            investment_amt = investment_amt*(1+(apr/periods))
+            
+        
+    print("The value in ", years, " years is:", investment_amt)
+    
+main()
+
+#8. Write a progrma that converts temperatures from Fahrenheit to Celsius.
+
+def main():
+    print("This program will convert Fahrenheit to Celsius.")
+    print("You will be prompted to enter the temperature in Fahrenheit.")
+    print("Type in the temperature and press enter.")
+    fahrenheit = eval(input("What is the Fahrenhehit temperature? "))
+    celcius = (5/9) * (fahrenheit - 32)
+    print("The temperature is", celcius, "degrees Celcius.")
+
+main()
+
+#9. Write a program that converts distances from kilometers to miles.
+
+def main():
+    print("This program will convert kilometers to miles.")
+    print("You will be prompted to enter the distance in kilometers.")
+    print("Type in the distance and press enter.")
+    kilometers = eval(input("What is the distance in kilometers? "))
+    miles = kilometers*0.62
+    print("The distance in miles is", miles, "miles")
+
+main()
+
+#10. Write a conversion from cups of water to milliliters of water. 
+
+def main():
+    print("This program will convert cups of water to mililiters of water.")
+    print("You will be prompted to enter the number of cups.")
+    print("Type in the number of cups and press enter.")
+    cups = eval(input("What is the volume in cups?"))
+    milliliters = cups*236.5882
+    print("The volume in milliliters is", milliliters, "milliliters.")
+    
+main()
+
+#11. Write an interactive Python calculator program. The user will type a 
+#    mathematical expression and then print the value of the expression.
+#    The user should be able to perform many calculations.
+
+def main():
+    
+    for i in range(3):
+        expr = eval(input("Write the expression you wish to evaluate."))
+        print("The answer is", expr)
+
+main()
+
+
+
+
     
     
 
